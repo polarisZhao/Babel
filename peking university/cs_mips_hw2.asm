@@ -1,6 +1,7 @@
 # cs_mips_hw1.asm
 # Author: zhaozhichao 
 # Peking University coursera: Computer Organization Week3 Homework
+# Test Environment： Mac OS X 10.14 & Mars4_5.jar
 
 # data segment
     .data
