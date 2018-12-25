@@ -6,11 +6,11 @@
 
 ### 2. Download Papers
 
-**Address：**https://www.papersapp.com
+**Address:** https://www.papersapp.com
 
 ### 3. Getting Started
 
-#####（1）顶部按钮： Search、Library、Labels、Authors、Sources、Readers
+##### （1）顶部按钮： Search、Library、Labels、Authors、Sources、Readers
 
 ![屏幕快照 2018-12-26 上午12.11.44](./src/papers.png)
 
@@ -31,11 +31,11 @@ Papers 提供了两种添加文献的方式：在线搜索或者本地导入
 
 - 可以通过搜索题目，作者，摘要等内容中的关键词来查找文献
 
-  **all**: All fields     **ti**:  Title           **ab**:  Abstract           **au**:  Author
-  **1au**: First Author        **lastau**: Last Author
-  **so**:  Source (journal)      **pb**:  Publisher      **ed**:  Editor
-  **vol**: Volume      **nr**:  Issue         **pg**:  Pages
-  **yr**:  Year       **kw**:  Keyword          **id**:  Identifier
+      all: All fields  ti:  Title           ab:  Abstract           au:  Author
+      1au: First Author        lastau: Last Author
+      so:  Source (journal)      pb:  Publisher      ed:  Editor
+      vol: Volume      nr:  Issue         pg:  Pages
+      yr:  Year       kw:  Keyword          id:  Identifier
 
   【输入内容之后，选择相应的标签】
 
@@ -43,17 +43,17 @@ Papers 提供了两种添加文献的方式：在线搜索或者本地导入
 
 - 可以通过  *search engines* 中   *favorites*   旁边的 *edit* 按钮编辑搜索引擎
 
-#####（3）Match
+##### （3）Match
 
 在论文上右击，选择 *Match…* ， 会与远程进行同步，自动填充上关键字，摘要，作者等信息。
 
-#####（4）文献的阅读和标记
+##### （4）文献的阅读和标记
 
 - 论文的组织：可以通过 **作者**、**关键词**、**文件夹**、**颜色标记**、**Flaged**、**加星** 进行分类。也可以据此查找
 
-- 论文的合并：菜单栏 View --> Show Duplicates --> 选中想要合并的论文 --> 右侧边栏单击 MergePaper 进行合并 
+- 论文的合并：**菜单栏View** --> **Show Duplicates** --> 选中想要合并的论文 --> 右侧边栏单击 *MergePaper* 进行合并 
 
-#####（5）论文的阅读：
+##### （5）论文的阅读：
 
 - **标记**：
   **添加Note**：点击可以向文章选定位置添加笔记，若无选定位置，将在文章当前页添加笔记；
@@ -64,14 +64,12 @@ Papers 提供了两种添加文献的方式：在线搜索或者本地导入
 
 - **显示**：单页、单页连续、双页、双页连续
 
-- 指定 PDF 阅读器：**Papers** -> **Preferences ** -> **Papers** -> **Open PDF Files** --> **In other application**
+- 指定 PDF 阅读器：**Papers** -> **Preferences** -> **Papers** -> **Open PDF Files** --> **In other application**
 
-#####（6）文献引用
+##### （6）文献引用
 
 - 在papers 进行基本的设置：引用格式和快捷键
 - 在文档中使用快捷键调出搜索框，输入论文内容并选择论文，然后再选择 **copy to clipboard**， 最后粘贴在指定位置即可。
 
-
-
-**参考资料：**http://haohailong.net/mac-app-papers/
+**参考资料：** http://haohailong.net/mac-app-papers/
 
