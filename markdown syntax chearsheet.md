@@ -104,7 +104,7 @@ int main(int argc, const char * argv[]) {
 
 ~~~ma&#39;k&#39;r
 $$ Enter
-$$f(z) = /frac{1}{1+e^{-z}}$$
+f(z) = /frac{1}{1+e^{-z}}
 ~~~
 
 
