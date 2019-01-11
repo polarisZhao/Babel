@@ -19,6 +19,7 @@
 #### research
 
 - **papers tutorial**
+- **Latex cheatsheet** from https://wch.github.io/latexsheet/
 
 
 
