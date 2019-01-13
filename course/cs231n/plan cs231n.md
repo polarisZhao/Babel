@@ -1,65 +1,67 @@
 
 1.12 周六：
 
-Lecture 1  **Course Introduction**
+- [ ] Lecture 1  **Course Introduction**
 
-Discussion Section **PyTorch / Tensorflow**
+- [ ] Discussion Section **PyTorch / Tensorflow**
+
+
 
 1.13 周天
 
-Lecture **Image Classification** 
+- [ ] Lecture **Image Classification** 
 
-Discussion Section **Python / numpy / Google Cloud**
+- [ ] Discussion Section **Python / numpy / Google Cloud**
 
 1.14 周一
 
-**Loss Functions and Optimization**
+- [ ] **Loss Functions and Optimization**
 
 1.15 周二
 
-**Introduction to Neural Networks**
+- [ ] **Introduction to Neural Networks**
 
-Discussion Section **Backpropagation**
+- [ ] Discussion Section **Backpropagation**
 
 1.16 周三 
 
-**Convolutional Neural Networks**
+- [ ] **Convolutional Neural Networks**
 
 1.17 周四
 
-**Assignment #1 due** 
+- [ ] **Assignment #1 due** 
 
 
 
 1.18 周五 & 1.19 周六
 
-**Training Neural Networks, part I** 
+- [ ] **Training Neural Networks, part I** 
 
-**Training Neural Networks, part II**
+- [ ] **Training Neural Networks, part II**
 
-**Tips and tricks for tuning NNs**
+- [ ] **Tips and tricks for tuning NNs**
 
 1.20 周天   
 
-**Deep Learning Hardware and Software** 
+- [ ] **Deep Learning Hardware and Software** 
 
 1.21 周一
 
-**CNN Architectures** 
+- [ ] **CNN Architectures** 
 
-**Assignment #2 due**
+- [ ] **Assignment #2 due**
 
 
 
 1.22 周二
 
-**Recurrent Neural Networks** 
+- [ ] **Recurrent Neural Networks** 
 
 
 
 1.23 周三
 
-**Detection and Segmentation** 
+- [ ] **Detection and Segmentation** 
 
 
 
@@ -71,48 +73,45 @@ Discussion Section **Backpropagation**
 
 1.25 周五
 
-**Generative Models** 
+- [ ] **Generative Models** 
 
 1.27 周六
 
-**Visualizing and Understanding** 
+- [ ] **Visualizing and Understanding** 
 
 1.28 周一
 
-**Deep Reinforcement Learning** 
+- [ ] **Deep Reinforcement Learning** 
 
-**Assignment #3 due**
+- [ ] **Assignment #3 due**
 
 1.29 周二
 
-**Invited Talk**
+- [ ] **Invited Talk**
 
-**Weak Supervision**
+- [ ] **Weak Supervision**
 
-**Video Understanding**
+- [ ] **Video Understanding**
 
-**Adversarial Examples and Adversarial Training**
+- [ ] **Adversarial Examples and Adversarial Training**
 
-**Efficient Methods and Hardware for Deep Learning**
-
-
+- [ ] **Efficient Methods and Hardware for Deep Learning**
 
 
 
-1.12 - 1.15 resnet
+#### network training
 
-1.15-1.22 faster rcnn
+- [ ] 1.12 - 1.15 **resnet**
 
-1.22-1.26 mask rcnn
+- [ ] 1.15-1.22  **faster-rcnn**
+
+- [ ] 1.22-1.26  **mask-rcnn**
 
 #### reference：
 
-1. [CS231n syllabus](http://cs231n.stanford.edu/syllabus.html)
-
+1. [CS231n index](http://cs231n.stanford.edu/index.html)
 2. 网易云课堂 课程主页 https://study.163.com/course/introduction/1004697005.htm
 3. 知乎智能单元首页 https://zhuanlan.zhihu.com/p/21930884?refer=intelligentunit
-
-
 
 
 
