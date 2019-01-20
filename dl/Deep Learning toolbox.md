@@ -16,18 +16,16 @@
 
 7. [**Amazon Datasets**](https://registry.opendata.aws)
 
-8. **Government Datasets**
-
-   [**EU**](https://data.europa.eu/euodp/data/dataset)                 [**US**](https://www.data.gov/)                 [**NZL**](https://catalogue.data.govt.nz/dataset)                [**IND**](https://data.gov.in/)  
+8. **Government Datasets:** [**EU**](https://data.europa.eu/euodp/data/dataset)                 [**US**](https://www.data.gov/)                 [**NZL**](https://catalogue.data.govt.nz/dataset)                [**IND**](https://data.gov.in/)  
 
 #### 🔍 Visualizing neural network architectures
 
-1. [**Netron:**](https://github.com/lutzroeder/Netron)  now supports **ONNX **, **Keras**, **CoreML**, **Caffe2**, **Mxnet**, **Pytorch** and **Tensorflow**.
+1. [**Netron:**](https://github.com/lutzroeder/Netron)  now supports **ONNX**, **Keras**, **CoreML**, **Caffe2**, **Mxnet**, **Pytorch** and **Tensorflow**.
 2. [**Netscope:**](https://ethereon.github.io/netscope/#/editor)  or  **GraphViz**:   **Caffe**       
 3. [**TensorBoard:**](https://github.com/tensorflow/tensorboard)   **Tensorflow**  
 4. [**Graphviz:**](https://github.com/szagoruyko/pytorchviz)   **Pytorch**   
-5. **mxnet.viz**  **mxnet**   
-6. **model.summary():**    **keras**
+5. [**mxnet.viz:**](https://github.com/Murugan-natarajan/mxnet/blob/7cd06109643664442045457a6c318c26d1c728ae/docs/how_to/visualize_graph.md)  **mxnet**   
+6. [**model.summary():**](https://keras.io/utils/#print_summary)    **keras**
 
 #### 🏷 Lable Tool
 
