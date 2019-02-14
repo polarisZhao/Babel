@@ -137,7 +137,7 @@ u 用户    g  所属群组   o 其他      r=read(4)     w=write(2)      x=exec
 
 `wget file`       下载file          `-c` 表示断点续传 
 
-`scp -r src/path   dst/path`      下载和上传文件或目录       `-P` 端口
+`scp  -r  src/path   dst/path`      下载和上传文件或目录       `-P` 端口
 `ping host`      探测指定IP或者域名的网络状况   `-c` 指定次数
 
 `netstat`      查看网络状态 `-t` TCP 端口  `-u` UDP 协议端口   `-l` 在监听状态
