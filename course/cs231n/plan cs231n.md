@@ -9,19 +9,24 @@
 
 1.13 周天
 
-- [ ] Lecture **Image Classification** 
+- [ ] Lecture **Image Classification**
 
 - [ ] Discussion Section **Python / numpy / Google Cloud**
+
+
 
 1.14 周一
 
 - [ ] **Loss Functions and Optimization**
 
+
+
 1.15 周二
 
 - [ ] **Introduction to Neural Networks**
-
 - [ ] Discussion Section **Backpropagation**
+
+
 
 1.16 周三 
 
@@ -73,17 +78,22 @@
 
 1.25 周五
 
-- [ ] **Generative Models** 
+- [ ] **Generative Models**
+
+   
 
 1.27 周六
 
 - [ ] **Visualizing and Understanding** 
 
+
+
 1.28 周一
 
 - [ ] **Deep Reinforcement Learning** 
-
 - [ ] **Assignment #3 due**
+
+
 
 1.29 周二
 
@@ -99,13 +109,15 @@
 
 
 
+
+
 #### network training
 
 - [ ] 1.12 - 1.15 **resnet**
-
 - [ ] 1.15-1.22  **faster-rcnn**
-
 - [ ] 1.22-1.26  **mask-rcnn**
+
+
 
 #### reference：
 
