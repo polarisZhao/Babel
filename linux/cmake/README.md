@@ -5,13 +5,14 @@ $ cd project1  # use project2/project3 instead of project1
 $ cd build
 $ cmake ..
 $ make
-$ ./hello 
+$ ./hello # 
 Hello World.
 ~~~
 
 - **project 1:**  使用cmake 编译项目
 - **project 2:** 使用动态链接库
 - **project 3：** 将src和include 分别放到不同的文件夹下
+- **project4: ** 使用第三方库
 
 
 
@@ -28,7 +29,7 @@ add_executable(Demo main.cpp)
 
 ##### 2. 多个文件同时编译
 ~~~cmake
-# aux_source_directory(<dir> <variable>)
+# 使用 aux_source_directory(<dir> <variable>)
 aux_source_directory(src DIR_SRCS)
 add_library(xxxxx SHARED ${SRC_FILES})
 
@@ -49,20 +50,29 @@ add_library(xxxxx SHARED ${SRC_FILES})
 
 ~~~cmake
 # 静态库
-add_library(slib STATIC libStatic.cpp)
+add_library(slzheliib STATIC libStatic.cpp)
 # 共享库
 add_library(dlib SHARED libShared.cpp)
 ~~~
 
-##### 4. 使用第三方包(以 opencv 为例)
+##### 4. 使用第三方包(以 opencv 和 FFTW 为例)
 
 ~~~cmake
+# 编译: add_executable(Demo demo.cpp)
 find_package( OpenCV REQUIRED)
-include_directories(${OpenCV_INCLUDE_DIRS})
-# add_executable(Demo demo.cpp)
-target_link_libraries(Demo ${Opencv_LIBS})
+if (OpenCV_FOUND)
+    include_directories(${OpenCV_INCLUDE_DIRS})
+    target_link_libraries(Demo ${Opencv_LIBS})
+endif (OpenCV_FOUND)
 ~~~
 
+~~~cmake
+# 另外一种方式(通过 xxx.cmake 进行)　
+# cmake相当于上一种方式中的find_package和include_directories
+# 这里以 FFTW 为例
+include(cmake/FindFFTW.cmake)
+target_link_libraries(udwt-gumbel ${OpenCV_LIBS} ${FFTW_LIBRARIES})
+~~~
 
 ##### 5. 如何优化编译选项(Debug/Release模式)：
 
@@ -152,33 +162,77 @@ message(STATUS "PROJECT VERSION IS ${DEMO_VERSION_MAJOR}.${DEMO_VERSION_MINOR}")
 
 ##### 9. 设置子文件夹
 
+在主项目的 `CMakeLists.txt` 中, 可以使用 `add_subdirectory` 来添加 子文件夹, 然后在子文件夹中也要有一个 `CMakeLists.txt` 文件.
+
 ~~~cmake
+add_subdirectory(benchmark)
+add_subdirectory(src)
+add_subdirectory(tools)
+~~~
 
+项目的基本目录为:
 
-
+~~~cmake
+.
+├── src
+│   ├── CMakeLists.txt
+│   └── xxx.cpp
+├── tools
+│   ├── CMakeLists.txt
+│   └── xxx.cpp
+├── benchmark
+│   ├── CMakeLists.txt
+│   └── xxx.cpp
+├── main.cpp
+└── CMakeLists.txt
 ~~~
 
 ##### 10. 测试
 
 ~~~cmake
+enable_testing()
 
+add_test (test_5_2 Demo 5 2)
+set_tests_properties (test_5_2 PROPERTIES PASS_REGULAR_EXPRESSION "is 25")
 
-
+add_test (test_2_10 Demo 2 10)
+set_tests_properties (test_2_10 PROPERTIES PASS_REGULAR_EXPRESSION "is 1024")
 ~~~
+
+set_tests_properties 中的 `PASS_REGULAR_EXPRESSION` 用来测试输出是否包含后面跟着的字符串。
 
 ##### 11.设置安装与与生成安装包
 
+生成的 Demo 文件将会被复制到 `/usr/local/bin` 中，而 demo.h 和则会被复制到 `/usr/local/include` 中。顺带一提的是，这里的 `/usr/local/` 是默认安装到的根目录，可以通过修改 `CMAKE_INSTALL_PREFIX` 变量的值来指定这些文件应该拷贝到哪个根目录。
+
 ~~~cmake
-
-
-
-
-# sudo ldconfig
+install (TARGETS Demo DESTINATION bin) 
+install (FILES demo.h DESTINATION include)
 ~~~
 
-##### 12. find.cmake...
+##### 12. 指定输出目录
 
+~~~cmake
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)       # 设置可执行文件的输出目录
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)           # 设置库文件的输出目录
+~~~
 
+##### 13.  使用第三方软件,  但是不安装(以opencv为例)
+
+将所需的头文件放在  `include`  文件夹中, 将需要的 共享库 `*.so` 放在 `lib` 文件夹中.
+
+~~~cmake
+include_directories(include)
+set(opencv_lib
+   ${CMAKE_CURRENT_SOURCE_DIR}/lib/libopencv_highgui.so.3.3
+   ${CMAKE_CURRENT_SOURCE_DIR}/lib/libopencv_videoio.so.3.3
+   ${CMAKE_CURRENT_SOURCE_DIR}/lib/libopencv_imgcodecs.so.3.3
+   ${CMAKE_CURRENT_SOURCE_DIR}/lib/libopencv_imgproc.so.3.3
+   ${CMAKE_CURRENT_SOURCE_DIR}/lib/libopencv_core.so.3.3
+)
+
+target_link_libraries(demo ${opencv_lib})
+~~~
 
 
 
@@ -195,6 +249,12 @@ message(STATUS "PROJECT VERSION IS ${DEMO_VERSION_MAJOR}.${DEMO_VERSION_MINOR}")
 ​        makefile在一些简单的工程完全可以人工手写，但是当工程非常大的时候，手写makefile也是非常麻烦的，如果换了个平台makefile又要重新修改。这时候就出现了Cmake这个工具，**cmake就可以更加简单的生成makefile文件给上面那个make用**。当然cmake还有其他功能，就是**可以跨平台**生成对应平台能用的makefile，你不用再自己去修改了。可是cmake根据什么生成makefile呢？它又要**根据一个叫CMakeLists.txt文件（学名：组态档）去生成makefile**。到最后CMakeLists.txt文件谁写啊？亲，是你自己手写的。三者的关系可以如下面的简图所示：
 
 ![p4107](../../img/cmake.png)
+
+##### 3. 常见的路径
+
+**PROJECT_SOURCE_DIR: **含有 `project()` 指令的`CMakeLists.txt` 文件夹。
+
+**CMAKE_CURRENT_SOURCE_DIR: ** 目前正在处理的CMakeLists.txt 所在位置。
 
 ### 四. 参考链接
 
