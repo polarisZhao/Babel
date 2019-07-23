@@ -12,7 +12,7 @@ Hello World.
 - **project 1:**  使用cmake 编译项目
 - **project 2:** 使用动态链接库
 - **project 3：** 将src和include 分别放到不同的文件夹下
-- **project4: ** 使用第三方库
+- **project4:** 使用第三方库
 
 
 
@@ -252,9 +252,15 @@ target_link_libraries(demo ${opencv_lib})
 
 ##### 3. 常见的路径
 
-**PROJECT_SOURCE_DIR: **含有 `project()` 指令的`CMakeLists.txt` 文件夹。
+**PROJECT_SOURCE_DIR:** 含有 `project()` 指令的`CMakeLists.txt` 文件夹。
 
-**CMAKE_CURRENT_SOURCE_DIR: ** 目前正在处理的CMakeLists.txt 所在位置。
+**CMAKE_CURRENT_SOURCE_DIR:** 目前正在处理的CMakeLists.txt 所在位置。
+
+##### 4. 指定输出路径
+~~~cmake
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../bin)       #设置可执行文件的输出目录
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../lib)           #设置库文件的输出目录
+~~~
 
 ### 四. 参考链接
 
