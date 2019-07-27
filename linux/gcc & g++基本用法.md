@@ -116,3 +116,6 @@ clean:　
     rm -r *.o $(TARGET)
 ~~~~~~
 
+参考:
+
+<跟我一起写 Makefile> 陈皓
