@@ -7,9 +7,9 @@
 
 默认会在`/lib`和`/usr/lib`和`/usr/local/lib`三个目录进行搜索
 
-👉  动态添加方法　　　`pkg-config [pkg_name] —libs`
+👉  动态添加方法　`pkg-config [pkg_name] —libs`
 
-**-l[libname]**             指定程序要链接的库，-l参数紧接着就是库名
+**-l[libname]**      指定程序要链接的库，-l参数紧接着就是库名
 
 例如： 库名是`m`，　库文件名　`libm.so`　 链接　`-lm`
 
