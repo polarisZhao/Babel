@@ -1,3 +1,0 @@
-/home/zhaozhichao/Desktop/Babel-master/linux/cmake/project4/build/CMakeFiles/rebuild_cache.dir
-/home/zhaozhichao/Desktop/Babel-master/linux/cmake/project4/build/CMakeFiles/ReadCamera.dir
-/home/zhaozhichao/Desktop/Babel-master/linux/cmake/project4/build/CMakeFiles/edit_cache.dir
