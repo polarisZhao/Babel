@@ -23,7 +23,7 @@ CS229: Machine Learning  <http://cs229.stanford.edu>
 
 Deep Learning
 
-Deep Learning <http://web.stanford.edu/class/cs230/>
+CS230 Deep Learning <https://web.stanford.edu/class/cs230/>
 
 CS231n: Convolutional Neural Networks for Visual Recognition
 
@@ -32,6 +32,8 @@ CS231n: Convolutional Neural Networks for Visual Recognition
 PS: https://zhuanlan.zhihu.com/p/21930884  [中]  http://www.mooc.ai/course/268  [中]
 
 Stanford CS224d:Deep Learning for Natural Language Processing  <http://cs224d.stanford.edu>
+
+CS224n: Natural Language Processing with Deep Learning http://web.stanford.edu/class/cs224n/
 
 stanford university  CS 20SI: Tensorflow for Deep Learning Research <http://web.stanford.edu/class/cs20si/index.html>
 
@@ -69,7 +71,19 @@ pytorch zerotoall   <https://github.com/hunkim/PyTorchZeroToAll>
 
 **Others**
 
-UCB S 294: Deep Reinforcement Learning <http://rll.berkeley.edu/deeprlcourse/>
+STAT 157 Introduction to Deep Learning http://courses.d2l.ai/berkeley-stat-157/index.html
+
+CS294-158 Deep Unsupervised Learning Spring 2019   https://sites.google.com/view/berkeley-cs294-158-sp19/home
+
+UCB S 285: Deep Reinforcement Learning    http://rail.eecs.berkeley.edu/deeprlcourse/
+
+CS294 AI-Sys Spring 2019  https://ucbrise.github.io/cs294-ai-sys-sp19/
+
+Washingtom systems for ML:  http://dlsys.cs.washington.edu/
+
+Deep Mind & University College London，UCL　advanced of Deep  Learning & Reinforcement Learning 
+
+https://www.youtube.com/playlist?list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs
 
 2017 NIPS  Deep Mind   Deep Learning Practice and Trends.pdf  <https://docs.google.com/presentation/d/e/2PACX-1vQMZsWfjjLLz_wi8iaMxHKawuTkdqeA3Gw00wy5dBHLhAkuLEvhB7k-4LcO5RQEVFzZXfS6ByABaRr4/pub?slide=id.p>
 
@@ -82,6 +96,12 @@ UCL Course on RL <http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html>
 mxnet    <https://space.bilibili.com/209599371?spm_id_from=333.338.viewbox_report.7#/>
 
 caffe tutorial  <http://caffe.berkeleyvision.org/tutorial/>
+
+University of Toronto Neural Networks for Machine Learning 
+
+Probabilistic Graphical Models: http://www.cs.cmu.edu/~epxing/Class/10708/lecture.html
+
+Probabilistic Graphical:https://www.coursera.org/learn/probabilistic-graphical-models
 
 #### 2. Deep Learning Framework
 
@@ -97,13 +117,23 @@ caffe tutorial  <http://caffe.berkeleyvision.org/tutorial/>
 
 **Mobile:** 
 
-**caffe2**  (facebook)
+**Tensorflow: Tensorflow-lite**
 
-**core-ml**  (apple)
+**Pytorch: caffe2**  (facebook)
 
-**ncnn** (tencent) <https://github.com/Tencent/ncnn>
+**Apple: Core-ml**  (apple)
 
-**mobile-deep-learning** (baidu)  <https://github.com/baidu/mobile-deep-learning>
+
+
+**ncnn** (Tencent) <https://github.com/Tencent/ncnn>
+
+**paddle-mobile** (Baidu)  <https://github.com/baidu/mobile-deep-learning>
+
+**mace**(Xiaomi)  https://github.com/XiaoMi/mace
+
+**mnn**(Alibaba)   https://github.com/alibaba/MNN
+
+
 
 【MXnet】
 
@@ -129,11 +159,13 @@ Stanford  tensorflow 教程 <https://web.stanford.edu/class/cs20si/>
 
 Others:
 
-TVM: https://github.com/dmlc/tvm
+**TVM**: https://github.com/dmlc/tvm
 
-TC: TensorComprehensions
+**TC**: TensorComprehensions
 
-onnx: <https://github.com/onnx/onnx>
+**Onnx**: <https://github.com/onnx/onnx>
+
+
 
 #### 3. Computer Vision related Paper
 
