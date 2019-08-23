@@ -1,141 +1,102 @@
-# deep-learning-summary
-deep learning course, framework, models, confluence and so on
+## Deep Learning Summary
 
-#### 1. Course
+[TOC]
 
-**Coursera** 
+### 1. Course
 
-machine learning  <https://www.coursera.org/learn/machine-learning>
+##### machine learning 
 
-deep learning    <https://www.coursera.org/specializations/deep-learning>
+coursera: machine learning  https://www.coursera.org/learn/machine-learning
 
-Neural Networks for Machine Learning    <https://www.coursera.org/learn/neural-networks>
+Stanford: CS229: Machine Learning  <http://cs229.stanford.edu>
 
-**Udacity**  
+##### deep learning 
 
-machine learning & deep learning foundation
+coursera: deep learning    <https://www.coursera.org/specializations/deep-learning>
 
-**Stanford**
+coursera: Neural Networks for Machine Learning    <https://www.coursera.org/learn/neural-networks>
 
-Machine Learning
+udacity: deep learning foundation
 
-CS229: Machine Learning  <http://cs229.stanford.edu>
+Stanford: CS230 Deep Learning <https://web.stanford.edu/class/cs230/>
 
-Deep Learning
+CMU: 11-785 Introduction to Deep Learning   http://deeplearning.cs.cmu.edu/
 
-CS230 Deep Learning <https://web.stanford.edu/class/cs230/>
+MIT 6.S191: Introduction to Deep Learning  <http://introtodeeplearning.com>
 
-CS231n: Convolutional Neural Networks for Visual Recognition
+STAT 157 Introduction to Deep Learning http://courses.d2l.ai/berkeley-stat-157/index.html
 
-<http://cs231n.github.io>
-
-PS: https://zhuanlan.zhihu.com/p/21930884  [中]  http://www.mooc.ai/course/268  [中]
-
-Stanford CS224d:Deep Learning for Natural Language Processing  <http://cs224d.stanford.edu>
-
-CS224n: Natural Language Processing with Deep Learning http://web.stanford.edu/class/cs224n/
-
-stanford university  CS 20SI: Tensorflow for Deep Learning Research <http://web.stanford.edu/class/cs20si/index.html>
-
-**CMU** 
-
-CMU 11-785 Introduction to Deep Learning   <http://deeplearning.cs.cmu.edu/>
-
-CMU CS 11-747, Spring 2018 Neural Networks for NLP   <http://phontron.com/class/nn4nlp2018/>
-
-**台湾大学**
-
-ADLxMLDS  <https://www.youtube.com/channel/UCyB2RBqKbxDPGCs1PokeUiA/videos>[中文]
+Fast.ai: Practical Deep Learning For Coders   <http://course.fast.ai>  
 
 1天搞懂深度学习 [http://www.slideshare.net/tw_dsconf/ss-62245351?qid=108adce3-2c3d-4758-a830-95d0a57e46bc&v=&b=&from_search=3](https://link.zhihu.com/?target=http%3A//www.slideshare.net/tw_dsconf/ss-62245351%3Fqid%3D108adce3-2c3d-4758-a830-95d0a57e46bc%26v%3D%26b%3D%26from_search%3D3) [中文]
 
-**Fast.ai** Practical Deep Learning For Coders   <http://course.fast.ai>  
+ADLxMLDS  <https://www.youtube.com/channel/UCyB2RBqKbxDPGCs1PokeUiA/videos>[中文]
 
-**MIT**
+##### computer vision
 
-MIT 6.S191: Introduction to Deep Learning  <http://introtodeeplearning.com>
+stanford: CS231n Convolutional Neural Networks for Visual Recognition<http://cs231n.github.io>
+
+PS: https://zhuanlan.zhihu.com/p/21930884  [中]  http://www.mooc.ai/course/268  [中]
+
+##### NLP
+
+Stanford: CS224d:Deep Learning for Natural Language Processing  <http://cs224d.stanford.edu>
+
+Stanford: CS224n: Natural Language Processing with Deep Learning http://web.stanford.edu/class/cs224n/
+
+CMU: CS 11-747, Spring 2018 Neural Networks for NLP   http://phontron.com/class/nn4nlp2018/
+
+Oxford:Deep Learning NLP -2017 https://github.com/oxford-cs-deepnlp-2017/lectures
+
+##### Reinforement Learning 
+
+UCL Course on RL <http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html
+
+UCB S 285: Deep Reinforcement Learning    http://rail.eecs.berkeley.edu/deeprlcourse/
+
+Deep Mind & UCL: Advanced of Deep  Learning & Reinforcement Learning 
+
+https://www.youtube.com/playlist?list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs
+
+##### AI systems
+
+UCB: CS294 AI-Sys Spring 2019  https://ucbrise.github.io/cs294-ai-sys-sp19/
+
+Washington university: Systems for ML:  http://dlsys.cs.washington.edu/
+
+##### Unsupervised Learning
+
+UCB: CS294-158 Deep Unsupervised Learning Spring 2019   https://sites.google.com/view/berkeley-cs294-158-sp19/home
+
+##### Probabilistic Graphical
+
+CMU: Probabilistic Graphical Models: http://www.cs.cmu.edu/~epxing/Class/10708/lecture.html
+
+Stanford: Probabilistic Graphical:https://www.coursera.org/learn/probabilistic-graphical-models
+
+**Others**
 
 MIT 6.S099: Artificial General Intelligence: <https://agi.mit.edu>
 
 MIT 6.S094: Deep Learning for Self-Driving Cars <https://selfdrivingcars.mit.edu>
 
-**Oxford**
-
-Deep Learning NLP -2017 <https://github.com/oxford-cs-deepnlp-2017/lectures>
-
-Introduction to Deep Learning for Natural Language Processing (Tutorial at DeepLearning2017 summer school in Bilbao)  <https://www.microsoft.com/en-us/research/publication/introduction-deep-learning-natural-language-processing-tutorial-deeplearning2017-summer-school-bilbao-2/#>
-
-**CUHK**
-
-pytorch zerotoall   <https://github.com/hunkim/PyTorchZeroToAll>
-
-**Others**
-
-STAT 157 Introduction to Deep Learning http://courses.d2l.ai/berkeley-stat-157/index.html
-
-CS294-158 Deep Unsupervised Learning Spring 2019   https://sites.google.com/view/berkeley-cs294-158-sp19/home
-
-UCB S 285: Deep Reinforcement Learning    http://rail.eecs.berkeley.edu/deeprlcourse/
-
-CS294 AI-Sys Spring 2019  https://ucbrise.github.io/cs294-ai-sys-sp19/
-
-Washingtom systems for ML:  http://dlsys.cs.washington.edu/
-
-Deep Mind & University College London，UCL　advanced of Deep  Learning & Reinforcement Learning 
-
-https://www.youtube.com/playlist?list=PLqYmG7hTraZDNJre23vqCGIVpfZ_K2RZs
-
-2017 NIPS  Deep Mind   Deep Learning Practice and Trends.pdf  <https://docs.google.com/presentation/d/e/2PACX-1vQMZsWfjjLLz_wi8iaMxHKawuTkdqeA3Gw00wy5dBHLhAkuLEvhB7k-4LcO5RQEVFzZXfS6ByABaRr4/pub?slide=id.p>
-
-AI and Deep Learning in 2017 – A Year in Review <http://www.wildml.com/2017/12/ai-and-deep-learning-in-2017-a-year-in-review/>
-
-OPENAI requests for research-2 <https://blog.openai.com/requests-for-research-2/>
-
-UCL Course on RL <http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html>
-
-mxnet    <https://space.bilibili.com/209599371?spm_id_from=333.338.viewbox_report.7#/>
-
-caffe tutorial  <http://caffe.berkeleyvision.org/tutorial/>
-
-University of Toronto Neural Networks for Machine Learning 
-
-Probabilistic Graphical Models: http://www.cs.cmu.edu/~epxing/Class/10708/lecture.html
-
-Probabilistic Graphical:https://www.coursera.org/learn/probabilistic-graphical-models
-
-#### 2. Deep Learning Framework
-
-**PC/Server**:  
-
-**Tensorflow** (google)        
-
-**Mxnet** (amazon)       
-
-**Caffe + Pytorch**  (facebook)   pytorch for research ，caffe for production
-
-![img](../img/gluon.png)
-
-**Mobile:** 
-
-**Tensorflow: Tensorflow-lite**
-
-**Pytorch: caffe2**  (facebook)
-
-**Apple: Core-ml**  (apple)
 
 
+### 2. Deep Learning Framework
 
-**ncnn** (Tencent) <https://github.com/Tencent/ncnn>
+##### PC/Server  
 
-**paddle-mobile** (Baidu)  <https://github.com/baidu/mobile-deep-learning>
+- **Tensorflow** (google)    
 
-**mace**(Xiaomi)  https://github.com/XiaoMi/mace
+Tensorflow 官网中国备份地址  <https://tensorflow.google.cn/>  
 
-**mnn**(Alibaba)   https://github.com/alibaba/MNN
+Tensorflow github 地址  <https://github.com/tensorflow/tensorflow> 
 
+Tensorflow serving github 地址<https://github.com/tensorflow/serving> 
 
+Stanford  tensorflow 教程 <https://web.stanford.edu/class/cs20si/>       
 
-【MXnet】
+- **Mxnet** (amazon)       
 
 论坛：<https://discuss.gluon.ai>
 
@@ -147,17 +108,33 @@ Github 主页：<https://github.com/apache/incubator-mxnet>
 
 mxnet 主页：<http://mxnet.readthedocs.io/en/latest/>
 
-【Tensorflow】
+- **Caffe2 + Pytorch**  (facebook)   pytorch for research ，caffe2 for production
 
-Tensorflow 官网中国备份地址  <https://tensorflow.google.cn/>  
+pytorch zerotoall   <https://github.com/hunkim/PyTorchZeroToAll
 
-Tensorflow github 地址  <https://github.com/tensorflow/tensorflow> 
+caffe tutorial  <http://caffe.berkeleyvision.org/tutorial/>
 
-Tensorflow serving github 地址<https://github.com/tensorflow/serving> 
+![img](../img/gluon.png)
 
-Stanford  tensorflow 教程 <https://web.stanford.edu/class/cs20si/>   
+##### Mobile
 
-Others:
+**Tensorflow: Tensorflow-lite**
+
+**Pytorch: caffe2**  (facebook)
+
+**Apple: Core-ml**  (apple)
+
+**ncnn** (Tencent) <https://github.com/Tencent/ncnn>
+
+**paddle-mobile** (Baidu)  <https://github.com/baidu/mobile-deep-learning>
+
+**mace**(Xiaomi)  https://github.com/XiaoMi/mace
+
+**mnn**(Alibaba)   https://github.com/alibaba/MNN
+
+
+
+##### Others
 
 **TVM**: https://github.com/dmlc/tvm
 
@@ -167,7 +144,25 @@ Others:
 
 
 
-#### 3. Computer Vision related Paper
+### 3. confluence 
+
+### 4. Books
+
+Pattern Recognition and Machine Learning
+
+Deep Learning(Ian Goodfellow / Yoshua Bengio)
+
+Neural Networks and Deep Learning <http://neuralnetworksanddeeplearning.com>
+
+UFLDL Tutorial <http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial>
+
+### 5. Blogs
+
+Distill (colah blog) https://distill.pub/
+
+OpenAI Blog https://openai.com/
+
+### 6. Computer Vision related Paper
 
 Deep learning  Yann LeCun, Yoshua Bengio, Geoffrey Hinton
 
@@ -335,168 +330,13 @@ Action Detection
 
 9.Keras implementation of "Wide Residual Networks" <https://github.com/asmith26/wide_resnets_keras>
 
-10.Caffe Model Zoo <https://github.com/BVLC/caffe/wiki/Model-Zoo>
+10.Caffe Model Zoo <https://github.com/BVLC/caffe/wiki/Model-Zoo
 
-#### 5. confluence 
+### 6. others
 
-VIPSAPP 2018 (13th International Conference on Computer Vision Theory and Applications )
+Introduction to Deep Learning for Natural Language Processing (Tutorial at DeepLearning2017 summer school in Bilbao)  <https://www.microsoft.com/en-us/research/publication/introduction-deep-learning-natural-language-processing-tutorial-deeplearning2017-summer-school-bilbao-2/#>
 
-时间：2018/01/27-2018/01/029 
+2017 NIPS  Deep Mind   Deep Learning Practice and Trends.pdf  <https://docs.google.com/presentation/d/e/2PACX-1vQMZsWfjjLLz_wi8iaMxHKawuTkdqeA3Gw00wy5dBHLhAkuLEvhB7k-4LcO5RQEVFzZXfS6ByABaRr4/pub?slide=id.p>
 
-地点：葡萄牙马德拉
+AI and Deep Learning in 2017 – A Year in Review <http://www.wildml.com/2017/12/ai-and-deep-learning-in-2017-a-year-in-review/>
 
-介绍：计算机视觉应用领域知名会议，内容覆盖图像分析处理，视频分析与理解，视觉跟踪等应用和服务。
-
-网址：http://wacv18.uccs.us/
-
-AAAI 2018（the Association for the Advancement of Artificial Intelligence ）
-
-时间：2018/02/02-2018/02/09
-
-地点：Hilton New Orleans Riverside, New Orleans, Lousiana, USA 
-
-介绍：人工智能领域顶级会议 ，涵盖人工智能和机器学习的各个分支
-
-官网：https://aaai.org/Conferences/AAAI-18/aaai18call/
-
-WACV 2018 (IEEE Winter Conf. on Applications of Computer Vision)
-
-时间：2018/03/12-2018/03/15 
-
-地点：美国内华达州
-
-介绍：侧重计算机视觉应用的国际知名会议 
-
-网址：http://wacv18.uccs.us/
-
-VALSE 2018(Vision and Learning SEminar)
-
-时间：2018/04/20-2018/04/22
-
-地点：大连理工
-
-介绍：计算机视觉、图像处理、模式识别与机器学习研究领域知名会议
-
-网址：http://ice.dlut.edu.cn/valse2018/index.html
-
-FG 2018（The IEEE Conference on Automatic Face and Gesture Recognition）
-
-时间：2018/05/15-2018/05/19
-
-地点：中国西安
-
-介绍：图像识别，视频中的人脸，手势及身体移动等的识别研究会议
-
-官网：https://fg2018.cse.sc.edu/index.html
-
-CVPR 2018（IEEE Conference on Computer Vision and Pattern Recognition）
-
-时间：2018/06/18-2018/06/22
-
-地点：美国盐湖城
-
-介绍：计算机视觉及模式识别领域国际三大顶级会议之一
-
-官网：https://fg2018.cse.sc.edu/index.html
-
-ICML 2018（Thirty-fifth International Conference on Machine Learning)
-
-时间：2018/07/10-2018/07/15 
-
-地点：瑞典斯德哥尔摩
-
-介绍：机器学习领域知名国际会议
-
-网址：https://icml.cc/Conferences/2018/
-
-IJCAI-ECAI 2018（27th International Joint Conference on Artificial Intelligence and the 23rd European Conference on Artificial Intelligence ）
-
-时间：2018/07/13-2018/07/19 
-
-地点：瑞典斯德哥尔摩
-
-介绍：国际顶级人工智能联合大会 
-
-官网：https://www.ijcai-18.org/
-
-ICPR 2018(the 24th International Conference on Pattern Recognition)
-
-时间：2018/08/20-2018/8/24 
-
-地点：中国北京
-
-介绍：模式识别,机器学习及计算机视觉国际著名会议 
-
-官网：http://www.icpr2018.org
-
-BMVC 2018（29TH BRITISH MACHINE VISION CONFERENCE）
-
-时间：2018/09/03-2019/09/06 
-
-地点：英国纽卡斯尔
-
-介绍：机器视觉，图像处理及模式识别相关领域著名国际会议 
-
-官网：http://bmvc2018.org
-
-ECCV 2018（European Conference on Computer Vision )
-
-时间：2018/09/08-2018/09/14 
-
-地点：德国慕尼黑
-
-介绍：计算机视觉国际三大顶级会议之一 
-
-官网：https://eccv2018.org/
-
-ICCVG 2018（International Conference on Computer Vision and Graphics）
-
-时间：2018/09/17-2018/09/19 
-
-地点：波兰华沙
-
-介绍：计算机视觉及图像领域著名国际会议 
-
-官网：http://iccvg.wzim.sggw.pl
-
-ICIP 2018 （The 25th IEEE International Conference on Image Processing）
-
-时间：2018/10/07-2018/10/10
-
-地点：希腊雅典
-
-介绍：国际知名图像和视频处理会议 
-
-官网：https://2018.ieeeicip.org
-
-PRCV 2018（The First Chinese Conference on Pattern Recognition and Computer Vision)
-
-时间：2018/11/23-2018/11/26
-
-地点：中国广州
-
-介绍：中国第一届模式识别和计算机视觉理论与应用会议
-
-网址：https://prcv-conf.org/2018/
-
-NIPS 2018（The Conference and Workshop on Neural Information Processing Systems )
-
-时间：2018/12/03-2018/12/08 
-
-地点：加拿大蒙特利尔
-
-介绍：机器学习领域国际顶级会议 
-
-官网：<https://nips.cc/Conferences/2018>
-
-PAMI/TPAMI (IEEE Transactions on Pattern Analysis and Machine Intelligence)
-
-
-
-#### 6. others：
-
-1. Deep Learning(Ian Goodfellow / Yoshua Bengio)
-2. Pattern Recognition and Machine Learning
-3. Neural Networks and Deep Learning <http://neuralnetworksanddeeplearning.com>
-4. UFLDL Tutorial <http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial>
-5. colah blog <https://colah.github.io>
