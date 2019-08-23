@@ -50,9 +50,13 @@ Oxford:Deep Learning NLP -2017 https://github.com/oxford-cs-deepnlp-2017/lecture
 
 ##### Reinforement Learning 
 
-UCL Course on RL <http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html
+UCL Course on RL http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html
 
 UCB S 285: Deep Reinforcement Learning    http://rail.eecs.berkeley.edu/deeprlcourse/
+
+Stanford CS234: Reinforcement Learning Winter 2019  http://web.stanford.edu/class/cs234/index.html
+
+李宏毅深度强化学习(中文)课程(2018)　https://www.bilibili.com/video/av24724071/?p=1
 
 Deep Mind & UCL: Advanced of Deep  Learning & Reinforcement Learning 
 
