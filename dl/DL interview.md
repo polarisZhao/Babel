@@ -30,14 +30,15 @@
 无论max pooling还是mean pooling，都没有需要学习的参数。因此，在卷积神经网络的训练中，**Pooling层需要做的仅仅是将误差项传递到上一层，而没有梯度的计算**。
 
 - max pooling层：对于max pooling，下一层的误差项的值会原封不动的传递到上一层对应区块中的最大值所对应的神经元，而其他神经元的误差项的值都是0；
-
 - mean pooling层：对于mean pooling，下一层的误差项的值会平均分配到上一层对应区块中的所有神经元。
 
-#### 3. 输入输出的计算，参数量的计算，感受野的计算   :v:
+
+
+#### 3. 输入输出的计算，参数量的计算，感受野的计算， FLOPS   :v:
 
 要时刻记住的是:　**输入通道数＝卷积核的通道数**　　**输出通道数＝卷积核的个数**
 
-假设输入为　$W_1 * H_1 * D$， 卷积核个数为 $K$，尺寸为$F$，步长为 $S$，
+假设输入为　$W_1 * H_1 * D$， 卷积核个数为 $K$，尺寸为$F$，步长为 $S$，输出为  $W^\prime * H^\prime * K$
 
 （１）关于输入和输出的计算:
 $$
@@ -69,11 +70,9 @@ pool2: receptive size: 67  # 51 + (3-1) * 8 = 67， s4 = 8 * 2 = 16
 conv3: receptive size: 99  # 67 + (3-1) * 16 = 99， s5 = 16 * 1 = 16
 ~~~
 
-#### 4. 反向传播的推导
+(4) FLOPS:   $F*F*D*K * H^\prime * W^\prime$
 
-
-
-#### 5. 常见的分类网络及其要点 :v:
+#### 4. 常见的分类网络及其要点 :v:
 
 - **Alexnet**
 
@@ -128,7 +127,7 @@ Inception Module 的4个分支在最后通过一个聚合操作合并（再输�
      (1) 常见的 **add 操作**见于 resnet 和 FPN、CPN。 而 concat 操作见于 Unet 和 Dense net。
     (2)  **add等价于concat之后对应通道共享同一个卷积核**。当两路输入可以具有“对应通道的特征图语义类似” 的性质的时候，可以用add来替代concat，这样**更节省参数和计算量**（concat是add的2倍）。
 
-#### 6. 批归一化(batch normlization)的作用及其实现 :v:
+#### 5. 批归一化(batch normlization)的作用及其实现 :v:
 
 研究动机:  **神经网络训练过程的本质是学习数据分布**，如果训练数据与测试数据的分布不同将大大降低网络的泛化能力，因此我们需要在训练开始前对所有输入数据进行归一化处理。然而**随着网络训练的进行，每个隐层的参数变化使得后一层的输入发生变化，从而每一批训练数据的分布也随之改变，致使网络在每次迭代中都需要拟合不同的数据分布，增大训练的复杂度以及过拟合的风险。这被称为内部协方差偏移（ICS）**.
 
@@ -150,7 +149,7 @@ $$
 
 - **对于预测阶段，我们所使用的均值和方差，是整个训练样本的均值和方差的期望值．**
 
-#### 7. Dropout的原理与实现  :v:
+#### 6. Dropout的原理与实现  :v:
 
 ​        **训练过程中，对于每个 mini-batch, 每个神经元以 $p\%$的概率随机失活，这样每次都对一个更加精简的网络进行训练。而在测试过程中每个神经元的参数要预先乘以概率系数 $p$，以恢复在训练中该神经元只有 $p$ 的概率被用于整个神经网络的前向传播计算。**
 
@@ -168,7 +167,7 @@ $$
 
 （3）Dropout 的使用使得无法有效的检验损失函数的下降，此时可以暂时的关闭dropout来检查损失函数值。
 
-####　8. 常见的激活函数及其导数?　　:v:
+####　7. 常见的激活函数及其导数?　　:v:
 
 Sigmoid 激活函数的形式为   $$f(z) = \frac{1}{1+e^{-z}}$$， 对应的导函数为    $f'(z) = f(z)(1-f(z))$
 
@@ -181,13 +180,13 @@ ReLU 激活函数的形式为  $f(z) = max(0，z)$，   对应的导函数为   
 \end{aligned}
 \right.$$
 
-#### 9. Relu的优缺点以及Relu的常见改进   :v:
+#### 8. Relu的优缺点以及Relu的常见改进   :v:
 
 优点：
 
 （1）从计算角度上， Sigmoid 和 tanh 激活函数均需要计算指数，复杂度高，而ReLU只需要一个阈值即可得到激活值。
 
-（2）ReLU 的非线性包含线性可以有效地解决梯度消失问题，提供相对较宽的激活边界。
+（2）ReLU 的线性非包含特性可以有效地解决梯度消失问题，提供相对较宽的激活边界。
 
 （3）ReLU的单侧抑制提供了网络的稀疏表达能力。  
 
@@ -215,72 +214,146 @@ x，x \ge 0 \\
 \end{aligned}
 \right.$$。ReLU 具备了 ReLU 函数的优点，同时也解决了ReLU 函数自身的“死区”问题。不过ELU 函数中的指数操作稍稍增大了计算量。在实际应用中，ELU 中的超参数 $\lambda$ 一般被设置为1。
 
-#### 10. 如何选择激活函数  :v:
+#### 9. 如何选择激活函数  :v:
 
 **使用激活函数是为了引入非线性从而产生强大的表达能力**。关于激活函数的选择：首先使用最常用的ReLU 激活函数，但是需要注意模型参数的初始化操作和学习率的设置。为了进一步提高模型精度，可以尝试使用 Leaky ReLU、参数化 ReLU、随机化 ReLU 和 ELU。但是四者的实际性能优劣并无一致性结论，需要具体问题具体分析.
 
+#### 10. 学习率lr的设定   :v:
+
+**模型刚开始的初始学习率不宜过大，以 0.01 和 0.001 为宜**；如果发现刚开始训练没几个批次模型的损失值就急剧上升，说明模型训练的学习率过大，此时应该减小学习率，从头训练。
+
+**常见的学习率有以下几种方式**：
+
+- 学习率减缓 (轮次减缓、指数减缓和分数减缓)
+
+- 周期性学习率：余弦退火 or 周期性学习率。
+- Warmup：当step小于warm up setp时，学习率等于基础学习率×(当前step/warmup_step)，此时学习率是一个递增的过程。当warm up结束后，学习率开始递减。
+
+#### 11.常见的初始化方式(推导Xavier参数)    :v:
+
+**不要使用全零初始化， 这样会导致网络不同神经元的输出相同，相同的输出导致梯度更新完全一样，这样便会令更新后的参数仍然保持一样的状态，从而无法对模型进行训练。比较推荐的网络初始化方式为 He 方式，将参数初始化为服从高斯部分或者均匀分布的较小随机数，同时对参数方差需要加以规范化**。
+（1）高斯分布：设输入神经元的个数为$n_{in}$，输出神经元的个数为$n_{out}$. 则服从高斯分布的参数随机初始化为:
+
+```python
+w = (0.001 * randn(n_in, n_out)) / sqrt(n/2)  # He method
+```
+
+其中 0.001为控制参数量纲的因子．n 为输入神经元的个数$n_{in}$ , 有时也可指定为 $(n_{in}+n_{out})/2$
+
+（2）均匀分布： 设输入神经元的个数为$n_{in}$，输出神经元的个数为$n_{out}$.　则服从均匀的参数随机初始化为:
+
+```python
+# He mothod
+low = -sqrt(6/n)
+high = sqrt(6/n)
+w = 0.001 * (low + (high - low) * rand(n_in, n_out))
+```
+
+**借助预训练模型中的参数作为新任务的参数初始化方式**一种简便且十分有效的模型参数初始化方法。
+
+####12. 数据量偏少怎么办？:v:
+
+**数据扩充，即根据一些先验知识，在保证特定信息的前提下，对原始数据进行适当变换，以达到扩充数据集的效果**。有效的数据扩充，不仅能够扩充训练数据集，还能增加数据多样性。一方面能够避免过拟合，另一方面，又会带来性能的提升。具体到图像分类任务，在保持图像类别不变的前提下，可以对训练集中的每幅图像进行以下变换：
+
+**数据层面：**
+
+- 在一定程度内的**随机旋转(rotating)**、**平移**、**缩放(scaling)**、**裁剪(cropping)**、**填充**、**上下左右翻转(flipping)**等。这些变换对应着同一个目标在不同角度的观察结果。
+- **色彩抖动（color jittering）：**在原图的RGB颜色空间进行轻微的扰动，也可以在**HSV 颜色空间**尝试改变原有的饱和度、明度(V)和色调(H)．
+- 改变图像的亮度、清晰度、对比度、锐度等。
+- **FancyPCA**。
+
+**算法层面：**
+
+- 先对图像进行特征提取， 然后在图像的**特征空间内进行变换**，利用一些通用的数据扩充或者上采样技术，例如 **SMOTE 算法**。
+- 使用**生成模型**也可以合成一些新样本，例如当今非常流行的对抗生成网络。
+- 使用 **Fine-tune** 进行微调
+- **小样本学习**
+
+####13. 数据不平衡怎么办？
 
 
 
 
-#### 数据量偏少怎么办？数据不平衡怎么办？
 
 
 
-#### 常见的初始化方式(推导Xavier参数)
+#### 14. Group Normalization 组归一化 :v:
+
+​        **Group Normalization** 是为了解决Batch Normalization 对较小的mini-batch 效果差的问题( 没办法通过几个样本的数据量，来近似总体的均值和标准差)。其主要思想是在 channel 方向 group，然后每个 group 内做归一化，计算 ![[公式]](https://www.zhihu.com/equation?tex=%28C%2FG%29%2AH%2AW) 的均值和方差，这样就与batch size无关，不受其约束。**Group Normalization 把每一个样本特征图的通道分成 G 组，对每组求均值和标准差，并独立地进行归一化。**
+
+参考代码如下：
+
+```python
+def GroupNorm(x, gamma, beta, G=16):
+
+    # x_shape:[N, C, H, W]
+    results = 0.
+    eps = 1e-5
+    x = np.reshape(x, (x.shape[0], G, x.shape[1]/16, x.shape[2], x.shape[3]))
+
+    x_mean = np.mean(x, axis=(2, 3, 4), keepdims=True)
+    x_var = np.var(x, axis=(2, 3, 4), keepdims=True0)
+    x_normalized = (x - x_mean) / np.sqrt(x_var + eps)
+    results = gamma * x_normalized + beta
+    return results
+```
+
+**几种常见的归一化：**
+
+![](../img/normalization.jpg)
+
+#### 15. 反向传播的推导
 
 
 
-#### Group Normalization 组归一化
+#### 16. 为什么会产生梯度消失和梯度爆炸现象
 
 
 
-#### 为什么会产生梯度消失和梯度爆炸现象
-
-#### $l_0$正则 vs $l_1$正则 vs $l_2$正则
-
-#### 常见的优化器，选择，优缺点
-
-#### 学习率lr的设定
-
-#### 评价指标 相关
-
-#### boost vs bagging
-
-#### 方差和偏差的理解以及两者和boost以及bagging的联系
-
-#### 梯度下降法 和 牛顿法 的区别和联系
-
-#### 损失函数 交叉墒 与 l2 loss 的选择? 原因
-
-#### 魔改 softmax
-
-#### 过拟合与欠拟合以及两者的关系
-
-#### 超参数选择的影响
+#### 17. $l_0$正则 vs $l_1$正则 vs $l_2$正则
 
 
 
+#### 18. 常见的优化器，选择，优缺点
 
+
+
+#### 19. 梯度下降法 和 牛顿法 的区别和联系
+
+
+
+#### 20. 交叉熵 与平方差损失函数的区别与选择?  :v:
+
+​    一般来说， 平方差损失函数更适合输出为连续， 并且最后一层布包含sigmoid或者softmax激活函数的神经网络。交叉熵更适合二分类或者多分类的场景。
+为什么？ 
+​        回顾反向传播中平方误差损失函数相对于输出层的导数： $\delta^{(l)} = -(y-a^{(L)}) f'(z^{(L)})$， 其中最后一项 $f'(z^{(L)})$ 为激活函数的导数。当激活函数为 Sigmoid 函数时， 如果 $z^{(L)}$ 的绝对值较大， 函数的梯度就会趋于饱和， 即 $f'(z^{(L)})$ 的绝对值非常小， 导致 $\delta^{(L)} $的取值也非常小， 使得基于梯度的学习速度非常缓慢。
+​        当使用交叉熵损失函数时， 相对于输出层的导数为: $\delta^{(L)} = a_k^{(L)} - 1$ 此时的导数是线性的，因此不会存在学习速度过慢的问题。
+
+![](../img/mse_vs_ce.png)
+
+反应在图片上就是 cross entropy曲面陡峭，因此当初始值距离目标值越远微分值越大，参数更新越快；square eerror的曲面和平坦，当初始值距离目标值远时微分值也不大，参数更新慢，一开始就卡住，即使考虑在微分值很小把学习速率设置大也不可行，因为当趋近于目标值的时候微分值也很小，过大的学习速率会导致跨过目标值的点。
+参考论文: Understanding the difficulty of training deep feedforward neural networks
 
 
 
 
 
-1. Is cross entropy better than l2 loss? Cross entropy is better at learning(faster) when used with sigmoid activation. This is because the derivative of the cross entropy activation cancels the derivative of sigmoid during backpropogation . Since derivative of sigmoid saturates at 1 and zero and slows down training，when the derivative ofsigmoid term is cancelled，learning is faster and prevents vanishing gradient problem.
-2. What happens when pooling is removed completely? What are the advantages of removing the pooling? What are the advantages of max pooling? Advantages of pooling:  Pooling helps in translational invariance.  Pooling leads to larger portion of the input image to be represented in the later layers. If there is no pooling，the network learns its own spatial pooling as usually the pooling layer has no parameters.
-3. What is the role of zero padding? Zero padding is used to not lose the pixels (information) in the boundary and to make the output feature map of fixed dimension.
-4. 
-5. How does batch norm help overcome vanishing gradient? Batch normalization helps in getting rid of outliers and hence leads to faster convergence. In batch normalization，input to every layer in the network is made zero mean and unit variance due to which the overall input to the activation will be centered around zero of the gaussian distribution. This implies that the input will be closer to zero and hence activation like sigmoid which saturates(becomes zero) due to its bell shape curve will not make gradients zero as its input is in the centre.
-6. How does relu solve vanishing gradient? The function is linear and does not saturate.
-7. What happens when we decrease the batch size to 1? What happens when we make the batch size equal to size of the dataset? When batch size is 1，the gradient descent is very random，and might take longer to converge. But the memory requirement is very less. When the batch size is equal to the entire batch，it requires lot of memory. Also，it might lead to sharp convergence due to which the network can overfit. Mini-batch gradient descent reaches smooth minimum.
-8. What is dilation? The filters have spaces between cells. Hence there is a gap of 1 when applying the convolution. This helps in more aggressive spatial pooling and the effective receptive field grows much quickly.
-9. Can FC be converted to convolutional layer? If the input of FC layer is 7*7*512，then set the size of filter to be 7. This type of network is called converted convent. Passing a larger image through converted convent is more efficient. This converted convent can give a vector of (series) of class scores across various spatial positions. This computationally more efficient than iterating a single convent over different spatial positions.
-10. What happens when we initialize all weights to zero with ReLu activation? There will be no learning.
-11. How to calculate the effective receptive field given filter size，padding and stride? How to calculate the number of FLOPS required? No. of FLOPS : input depth x output depth x o/p_feature_map_width x o/p_feature_map_height x kernel_width x kernel_height
-12. What is the difference between model parallelism and data parallelism? Model parallelism – when the training is done by sharing the parameters across the different architectures. Data parallelism – when training is done by sharing the data across different GPUs.
-13. Can a neural network with single RELU (non-linearity) act as a linear classifier? No
-14. Difference between l1 and l2 loss? Which is better? L1 loss is more robust to outliers，but has unstable solution and possible multiple solutions. L2 loss has stable solution and one solution.
-15. What is the role of filter size? How can it affect accuracy and computational efficiency? What is the ideal filter size to be chosen? Multiple small filters are better than 1 big filter. For e.g. three 3x3 filters instead of single 11x11 filter.
-16. How can you reduce the gap between validation and training loss? The problem of overfitting. Can be overcome using dropout，data augmentation.
-17. How would you increase the speed (fps) when employing deep learning in mobile platforms? A technique called pruning where at every iteration，the coefficients which are becoming zero or close to zero are checked and removed from being involved in further training. This phase is called inference. General questions to test if we know to use tensorflow framework (what is the command for session run) / how to access gpu (have you used cluster?)
+#### 21. 魔改 softmax
+
+#### 18. 评价指标 相关
+
+#### 19. 方差和偏差的理解以及两者和boost以及bagging的联系
+
+#### 19. boost vs bagging
+
+#### 24. 如何降低验证集和训练集之间的损失的差距？
+
+ The problem of overfitting. Can be overcome using dropout，data augmentation.
+
+
+
+
+
+#### 25.超参数调参
+
+**batch_size**: 当设置 batch_size 为1时， 会发生什么问题？ 当设置 batch_size 等于数据集大小时， 会发生什么问题？ 当设置 batch_size 为1时，梯度下降会非常随机， 可能需要很长时间才能收敛， 但是需要较小的显存占用。当设置 batch_size 等于数据集大小时 ，需要很大的显存占用， 可能会快速收敛并导致过拟合。相比之下， mini-batch 梯度下降可能梯度下降到较好的地方。
